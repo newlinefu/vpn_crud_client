@@ -1,0 +1,25 @@
+.error_cell {
+    background-color: orangered;
+}
+
+.input_table {
+    font-size: 25px;
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+}
+
+form > div {
+    border: 2px solid black;
+}
+form > div:last-child {
+    border: none;
+}
+
+.exit_btn {
+    background-color: dodgerblue;
+}
+
+.save_btn {
+    background-color: limegreen;
+}

@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react'
+import TableBlockContainer from './components/table_block/TableBlockContainer'
+import {initSelector} from './selectors/selectors'
+import {toInitApp} from './redux/reducers/init_reducer'
+import {connect} from 'react-redux'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+function App(props) {
+  const {isInit, toInitApp} = props
+
+  useEffect(() => {
+    toInitApp()
+        .catch(err => {
+          console.log(err)
+          alert(err.message)
+        })
+  })
+
+  if(!isInit)
+    return <div>...Loading...</div>
+
+  return <TableBlockContainer/>
 }
 
-export default App;
+function mapStateToProps(state) {
+  return {
+      isInit: initSelector(state)
+  }
+}
+
+export default connect(mapStateToProps, {
+  toInitApp
+})(App)

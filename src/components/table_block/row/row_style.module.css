@@ -1,0 +1,26 @@
+.row_action {
+    display: flex;
+    padding: 5px;
+}
+
+.row_action > button {
+    font-size: 30px;
+    width: 50px;
+    height: 100%;
+    color: lightgray;
+    padding: 5px;
+    margin-left: 10px;
+}
+
+.row_action > button:hover {
+    transition: 0.2s;
+    box-shadow: 2px 1px 4px 1px black;
+}
+
+.edit_btn {
+    background-color: dodgerblue;
+}
+
+.delete_btn {
+    background-color: orangered;
+}

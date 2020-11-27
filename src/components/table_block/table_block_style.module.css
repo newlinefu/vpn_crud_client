@@ -1,0 +1,9 @@
+.table_block_wrapper {
+    width: 70%;
+    margin: 50px auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
